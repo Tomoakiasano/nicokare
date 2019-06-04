@@ -1,0 +1,6 @@
+<h1>みんなの気持ちを見に行く</h1>
+<div>
+  <% @users.each do |user| %>
+    <%= link_to "#{user.name}", "/users/#{user.id}"  %><br />
+  <% end %>
+</div>
