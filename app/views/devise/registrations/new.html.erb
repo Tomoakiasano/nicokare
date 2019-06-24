@@ -4,6 +4,11 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
+    <%= f.label :team_name %><br>
+    <%= f.select(:team_id, [['SF team', 1], ['Web team', 2], ['BDE team', 3], ['QA team', 4]]) %>
+  </div>
+
+  <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name, autofocus: true %>
   </div>
