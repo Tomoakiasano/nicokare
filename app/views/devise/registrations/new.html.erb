@@ -1,11 +1,11 @@
-<h2>Sign up</h2>
+<h2>登録する</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :team_name %><br>
-    <%= f.select(:team_id, [['SF team', 1], ['Web team', 2], ['BDE team', 3], ['QA team', 4]]) %>
+    <%= f.label :team_name, 'チームを選択してください' %><br>
+    <%= f.select(:team_id, [['SFチーム', 1], ['Webチーム', 2], ['BDEチーム', 3], ['QAチーム', 4]]) %>
   </div>
 
   <div class="field">
@@ -31,8 +31,8 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+  <div class="actions mt-3">
+    <%= f.submit "登録する" %>
   </div>
 <% end %>
 
