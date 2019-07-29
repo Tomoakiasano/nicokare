@@ -18,6 +18,7 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'rb-readline'
 gem 'kaminari', '~> 0.17.0'
+gem 'settingslogic'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

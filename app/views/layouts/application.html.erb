@@ -9,35 +9,25 @@
   </head>
 
   <body>
-  <nav class="navbar navbar-expand-sm navbar-dark bg-success mb-3">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav4" aria-controls="navbarNav4" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <a class="navbar-brand" href="#">ニコカレー</a>
-    <div class="collapse navbar-collapse justify-content-end">
-        <ul class="navbar-nav">
-          <% if user_signed_in? %>
-            <li class="nav-item">
-              <%= link_to 'プロフィール変更', edit_user_registration_path , class: 'nav-link' %>
-            </li>
-            <li class="nav-item">
-              <%= link_to 'ログアウト', destroy_user_session_path, class: 'nav-link', method: :delete %>
-            </li>
-          <% else %>
-            <li class="nav-item">
-              <%= link_to 'ユーザー登録', new_user_registration_path, class: 'nav-link' %>
-            </li>
-            <li class="nav-item">
-              <%= link_to 'ログイン', new_user_session_path, class: 'nav-link' %>
-            </li>
-          <% end %>
-        </ul>
+  <%= render 'parts/header' %>
+
+  <!-- ログイン後のページでは横幅を広くする -->
+  <% if params[:controller] == 'home'%>
+    <div class="home_container">
+      <% if notice.present? %>
+        <p class="notice"><%= notice %></p>
+      <% end %>
+      <% if alert.present? %>
+        <p class="alert"><%= alert %></p>
+      <% end %>
+      <%= yield %>
     </div>
-  </nav>
-  <div class="container">
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
-  </div>
+  <% else %>
+    <div class="container">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
+    </div>
+  <% end %>
   </body>
 </html>

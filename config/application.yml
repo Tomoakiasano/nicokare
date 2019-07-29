@@ -1,0 +1,14 @@
+defaults: &defaults
+  comments_icon:
+    good: ( ＾∀＾)
+    okay: (・ω・)
+    sad: ( ；∀；)
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

@@ -203,6 +203,7 @@ GEM
     selenium-webdriver (3.141.0)
       childprocess (~> 0.5)
       rubyzip (~> 1.2, >= 1.2.2)
+    settingslogic (2.0.9)
     spring (2.0.2)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -269,6 +270,7 @@ DEPENDENCIES
   rb-readline
   sass-rails (~> 5.0)
   selenium-webdriver
+  settingslogic
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3

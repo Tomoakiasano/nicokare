@@ -10,13 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_08_051643) do
+ActiveRecord::Schema.define(version: 2019_07_23_025111) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "text"
+    t.integer "user_id"
+    t.integer "comment_id"
+    t.text "content"
     t.string "icon"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer "sort"
+    t.datetime "date"
+    t.integer "comment_first_user_id"
   end
 
   create_table "teams", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

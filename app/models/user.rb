@@ -5,5 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   belongs_to :team
-  belongs_to :comment, optional: true
+  has_many :comment
 end

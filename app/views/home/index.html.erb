@@ -1,11 +1,26 @@
-  <div><%= "#{@Date.month}月"%></div>
-  <div>
-    <% @month_range.each do |day| %>
-      <span style="display:inline-block;"><%= day.to_s + "日" %></span>
-    <% end %>
+<div class="home_wrapper">
+  <div class="home_date_area">
+    <div class="home_month_box">
+      <h2><%= "#{@date.month}月" %></h2>
+      <%= form_tag root_path, method: :get do %>
+        <%= select_tag 'select_date', options_for_select(setup_date, @date), id: 'dates' %>
+      <% end %>
+    </div>
+    <div class="home_date_box">
+      <% @month_range.each do |day| %>
+        <div class="home_date">
+          <span><%= day.to_s + "日" %></span>
+        </div>
+      <% end %>
+    </div>
   </div>
-  <div>
-    <% @users.each do |user| %>
-      <%= link_to "#{user.name}", "/users/#{user.id}"  %><br />
-    <% end %>
-  </div>
+  <!-- <div class="home_user_list_box clearfix">
+    <h5>SF チーム</h5>
+      <% @users.each do |users| %>
+        <% if users['team_id'] == 1 %>
+          <p><%= users.name %></p>
+        <% end %>
+      <% end %>
+  </div> -->
+
+</div>
